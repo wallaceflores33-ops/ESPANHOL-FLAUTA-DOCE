@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pack de Flauta Dulce · Clases Listas para Enseñar con Confianza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1005633002076751');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1005633002076751&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<script src="https://supermago.b-cdn.net/supermago.js?ver=20250224" defer></script>
+
+<style>
+  :root{
+    --ink:#1F2A24;
+    --paper:#F2EFE4;
+    --sage:#7C8F6C;
+    --sage-dark:#586B4B;
+    --wine:#8B3A3A;
+    --gold:#C79A3E;
+    --line:#DCD5C0;
+    --white:#FFFDF8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    color:var(--ink);
+    line-height:1.12;
+    font-weight:600;
+  }
+
+  a{text-decoration:none;color:inherit;}
+
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--wine);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .eyebrow::before{
+    content:'';
+    width:22px;
+    height:1px;
+    background:var(--wine);
+    display:inline-block;
+  }
+
+  /* ---------- staff-line spine (signature element) ---------- */
+  .staff-spine{
+    position:fixed;
+    top:0;
+    right:6%;
+    width:120px;
+    height:100vh;
+    pointer-events:none;
+    z-index:0;
+    opacity:0.55;
+  }
+  .staff-spine svg{width:100%;height:100%;}
+  .staff-line{
+    stroke:var(--line);
+    stroke-width:1;
+  }
+
+  @media (max-width:900px){
+    .staff-spine{display:none;}
+  }
+
+  section{position:relative;z-index:1;}
+
+  /* ---------- header / hero ---------- */
+  .hero{
+    max-width:1180px;
+    margin:0 auto;
+    padding:7vh 6% 10vh;
+    display:grid;
+    grid-template-columns:1.3fr 0.7fr;
+    gap:60px;
+    align-items:end;
+    min-height:88vh;
+  }
+
+  .hero-copy{opacity:0; animation:riseIn 0.9s 0.15s ease forwards;}
+
+  .hero h1{
+    font-size:clamp(2.3rem, 4.6vw, 3.6rem);
+    letter-spacing:-0.01em;
+    margin:22px 0 26px;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    color:var(--wine);
+  }
+
+  .hero p.lead{
+    font-size:1.08rem;
+    max-width:46ch;
+    color:#3A4A3E;
+    margin-bottom:36px;
+  }
+
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--wine);
+    color:var(--white);
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:0.98rem;
+    padding:18px 30px;
+    border-radius:2px;
+    border:1px solid var(--wine);
+    transition:transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    box-shadow:6px 6px 0 var(--gold);
+  }
+  .btn-primary:hover{
+    transform:translate(-3px,-3px);
+    box-shadow:9px 9px 0 var(--gold);
+  }
+  .btn-primary:focus-visible{outline:3px solid var(--sage-dark); outline-offset:3px;}
+
+  .hero-notes{
+    opacity:0;
+    animation:riseIn 0.9s 0.4s ease forwards;
+    border-left:1px solid var(--line);
+    padding-left:34px;
+    align-self:end;
+  }
+  .hero-notes p{
+    font-family:'Space Mono', monospace;
+    font-size:0.82rem;
+    color:var(--sage-dark);
+    line-height:1.9;
+  }
+
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---------- lessons (real sequence, numbering justified) ---------- */
+  .lessons{
+    max-width:1180px;
+    margin:0 auto;
+    padding:10vh 6%;
+  }
+
+  .lessons-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:60px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:26px;
+  }
+
+  .lessons-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+
+  .lesson-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+
+  .lesson{
+    background:var(--paper);
+    padding:38px 34px;
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .lesson.visible{opacity:1; transform:translateY(0);}
+
+  .lesson .num{
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--gold);
+    letter-spacing:0.08em;
+  }
+
+  .lesson h3{
+    font-size:1.18rem;
+    margin:12px 0 10px;
+    font-weight:500;
+  }
+
+  .lesson p{color:#4B5A4E; font-size:0.95rem;}
+
+  @media (max-width:720px){
+    .lesson-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- feature band ---------- */
+  .features{
+    background:var(--sage-dark);
+    color:var(--white);
+    padding:9vh 6%;
+  }
+  .features-inner{
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .features .eyebrow{color:var(--gold);}
+  .features .eyebrow::before{background:var(--gold);}
+
+  .features h2{color:var(--white); font-size:clamp(1.7rem,3vw,2.2rem); margin:16px 0 50px; max-width:24ch;}
+
+  .feat-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+  }
+  .feat-grid div{
+    border-top:1px solid rgba(255,255,255,0.25);
+    padding-top:20px;
+  }
+  .feat-grid div + div{border-left:1px solid rgba(255,255,255,0.15); padding-left:26px;}
+
+  .feat-grid h3{
+    color:var(--white);
+    font-size:1.02rem;
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .feat-grid p{color:#D9E0D2; font-size:0.9rem;}
+
+  @media (max-width:860px){
+    .feat-grid{grid-template-columns:1fr 1fr;}
+    .feat-grid div + div{border-left:none; padding-left:0;}
+    .feat-grid div{margin-top:20px;}
+  }
+
+  /* ---------- audience checklist ---------- */
+  .audience{
+    max-width:900px;
+    margin:0 auto;
+    padding:10vh 6%;
+  }
+  .audience h2{font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:44px; max-width:22ch;}
+
+  .check-item{
+    display:flex;
+    gap:20px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    align-items:flex-start;
+  }
+  .check-item svg{flex-shrink:0; margin-top:4px;}
+  .check-item p{font-size:1.05rem; color:var(--ink);}
+  .check-item p strong{color:var(--wine);}
+
+  /* ---------- bonuses ---------- */
+  .bonus{
+    max-width:1180px;
+    margin:0 auto;
+    padding:10vh 6%;
+  }
+  .bonus-head{text-align:center; margin-bottom:50px;}
+  .bonus-head h2{font-size:clamp(1.7rem,3vw,2.2rem);}
+
+  .bonus-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:34px;
+  }
+  .bonus-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .bonus-card .bc-visual{
+    height:150px;
+    background:var(--sage-dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .bonus-card .bc-visual svg{opacity:0.9;}
+  .bonus-card .bc-body{padding:26px 28px;}
+  .bonus-card h3{font-size:1.05rem; font-weight:500; margin-bottom:10px;}
+  .tag-gratis{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    color:var(--sage-dark);
+    border:1px solid var(--sage-dark);
+    padding:4px 10px;
+  }
+
+  @media (max-width:720px){
+    .bonus-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- offer ---------- */
+  .offer{
+    background:var(--ink);
+    color:var(--white);
+    padding:11vh 6%;
+    position:relative;
+  }
+  .offer-inner{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .offer .eyebrow{color:var(--gold);}
+  .offer .eyebrow::before{background:var(--gold);}
+  .offer h2{color:var(--white); font-size:clamp(1.6rem,3.4vw,2.4rem); margin:18px 0 8px;}
+  .offer .urgency{color:#B9C2B1; font-size:0.95rem; margin-bottom:50px;}
+
+  .price-block{margin-bottom:46px;}
+  .price-old{
+    font-family:'Space Mono', monospace;
+    color:#9AA694;
+    text-decoration:line-through;
+    font-size:1.1rem;
+  }
+  .price-new{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(3.2rem,8vw,5rem);
+    color:var(--gold);
+    line-height:1;
+    margin:8px 0 4px;
+  }
+  .price-new sup{font-size:0.4em; top:-0.5em;}
+  .price-note{font-size:0.85rem; color:#B9C2B1;}
+
+  .offer-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 30px;
+    text-align:left;
+    max-width:560px;
+    margin:0 auto 46px;
+  }
+  .offer-list li{
+    list-style:none;
+    font-size:0.92rem;
+    color:#DCE3D6;
+    padding-left:22px;
+    position:relative;
+  }
+  .offer-list li::before{
+    content:'✓';
+    position:absolute;
+    left:0;
+    color:var(--gold);
+  }
+
+  @media (max-width:560px){
+    .offer-list{grid-template-columns:1fr;}
+  }
+
+  .offer .btn-primary{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--ink);
+    box-shadow:6px 6px 0 var(--wine);
+  }
+  .offer .btn-primary:hover{box-shadow:9px 9px 0 var(--wine);}
+
+  footer{
+    padding:5vh 6%;
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    color:#8A9585;
+    background:var(--paper);
+  }
+</style>
+</head>
+<body>
+
+<div class="staff-spine" aria-hidden="true">
+  <svg viewBox="0 0 120 1000" preserveAspectRatio="none">
+    <line class="staff-line" x1="20" y1="0" x2="20" y2="1000"/>
+    <line class="staff-line" x1="40" y1="0" x2="40" y2="1000"/>
+    <line class="staff-line" x1="60" y1="0" x2="60" y2="1000"/>
+    <line class="staff-line" x1="80" y1="0" x2="80" y2="1000"/>
+    <line class="staff-line" x1="100" y1="0" x2="100" y2="1000"/>
+  </svg>
+</div>
+
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Material para profesores de flauta dulce</span>
+    <h1>Deja de improvisar y empieza a enseñar flauta dulce <em>con confianza</em> desde la primera clase</h1>
+    <p class="lead">Material didáctico completo con clases paso a paso, ejercicios prácticos y orientaciones listas para aplicar con tus alumnos desde el primer encuentro.</p>
+    <a href="https://chk.eduzz.com/tj5pze3q?currency=EUR" class="btn-primary">Quiero garantizar mi acceso ahora</a>
+  </div>
+  <div class="hero-notes">
+    <p>Postura y soplido<br>Notas y ritmo<br>Lectura de partitura<br>Repertorio en grupo</p>
+  </div>
+</section>
+
+<section class="lessons">
+  <div class="lessons-head">
+    <div>
+      <span class="eyebrow">Lo que vas a recibir</span>
+      <h2>Una secuencia pensada del primer sonido a la primera canción</h2>
+    </div>
+  </div>
+  <div class="lesson-grid">
+    <div class="lesson"><span class="num">01</span><h3>Clases completas y organizadas</h3><p>Con objetivos claros, paso a paso y tiempo sugerido para cada etapa de la clase.</p></div>
+    <div class="lesson"><span class="num">02</span><h3>Secuencia pedagógica para principiantes</h3><p>Empieza por postura y soplido, avanza hacia notas, ritmo, lectura y expresión musical.</p></div>
+    <div class="lesson"><span class="num">03</span><h3>Ejercicios prácticos en cada clase</h3><p>Incluye soplidos controlados, lectura de notas, entrenamiento rítmico y dinámica musical.</p></div>
+    <div class="lesson"><span class="num">04</span><h3>Teoría y práctica integradas</h3><p>Los alumnos aprenden tocando: la teoría musical se aplica directamente en la flauta.</p></div>
+    <div class="lesson"><span class="num">05</span><h3>Lectura de partitura simple</h3><p>El material enseña lectura musical de forma gradual, con actividades de fijación.</p></div>
+    <div class="lesson"><span class="num">06</span><h3>Repertorio fácil para tocar en grupo</h3><p>El alumno aprende tocando junto y termina el curso con una presentación.</p></div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="features-inner">
+    <span class="eyebrow">Con este material tendrás</span>
+    <h2>Todo listo para dar clase sin improvisar</h2>
+    <div class="feat-grid">
+      <div><h3>Cronograma completo</h3><p>Un plan detallado con clases listas, organizadas paso a paso, del nivel inicial al avanzado.</p></div>
+      <div><h3>Didáctica eficiente</h3><p>Clases progresivas que garantizan que tus alumnos avancen con confianza y resultados reales.</p></div>
+      <div><h3>Ahorro de tiempo</h3><p>Evita noches perdidas planificando qué enseñar. Todo el cronograma ya está preparado.</p></div>
+      <div><h3>Flexible por edad y nivel</h3><p>Contenido adaptable para enseñar desde niños hasta adultos, en nivel inicial o avanzado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <span class="eyebrow">Para quién es este material</span>
+  <h2 style="margin-top:16px;">Pensado para el profesor que quiere resultados desde la primera clase</h2>
+
+  <div class="check-item">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L7.5 15L17 5" stroke="#8B3A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>Para el profesor <strong>cansado de improvisar</strong> la clase cada semana.</p>
+  </div>
+  <div class="check-item">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L7.5 15L17 5" stroke="#8B3A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>Para quien quiere dar clases <strong>con confianza</strong> desde el primer encuentro con el alumno.</p>
+  </div>
+  <div class="check-item">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L7.5 15L17 5" stroke="#8B3A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>Para quien enseña a principiantes y necesita una <strong>secuencia lógica y progresiva</strong>.</p>
+  </div>
+  <div class="check-item">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L7.5 15L17 5" stroke="#8B3A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>Para quien quiere ver <strong>resultados reales</strong> y compromiso en el aula.</p>
+  </div>
+</section>
+
+<section class="bonus">
+  <div class="bonus-head">
+    <span class="eyebrow" style="justify-content:center;">Bonos especiales por garantizar hoy</span>
+  </div>
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <div class="bc-visual">
+        <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#F2EFE4" stroke-width="1.4"><path d="M9 18V5l12-2v13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="16" r="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="bc-body">
+        <h3>Material para principiante de flauta</h3>
+        <span class="tag-gratis">GRATIS</span>
+      </div>
+    </div>
+    <div class="bonus-card">
+      <div class="bc-visual">
+        <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#F2EFE4" stroke-width="1.4"><path d="M2 12c3-4 6-4 8 0s5 4 8 0s4-4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="bc-body">
+        <h3>Técnicas para mejorar el soplido</h3>
+        <span class="tag-gratis">GRATIS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="offer-inner">
+    <span class="eyebrow" style="justify-content:center;">Oferta especial por garantizar hoy</span>
+    <h2>La promoción de lanzamiento puede terminar en cualquier momento</h2>
+    <p class="urgency">Precio de lanzamiento válido solo mientras dure el stock de acceso promocional.</p>
+
+    <div class="price-block">
+      <div class="price-old">59,90 €</div>
+      <div class="price-new">15,90<sup>€</sup></div>
+      <div class="price-note">Pago único</div>
+    </div>
+
+    <ul class="offer-list">
+      <li>Material con clases listas</li>
+      <li>Cronograma paso a paso</li>
+      <li>En PDF para fácil consulta</li>
+      <li>Acceso de por vida</li>
+      <li>Garantía de 7 días</li>
+      <li>Actualizaciones gratis</li>
+      <li>Bono: material para principiante en flauta dulce</li>
+      <li>Bono: técnicas de mejora del soplido</li>
+    </ul>
+
+    <a href="https://chk.eduzz.com/tj5pze3q?currency=EUR" class="btn-primary">Quiero garantizar mi acceso ahora</a>
+  </div>
+</section>
+
+<footer>© 2026 · Todos los derechos reservados</footer>
+
+<script>
+  const lessons = document.querySelectorAll('.lesson');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  lessons.forEach(l => io.observe(l));
+</script>
+
+</body>
+</html>
